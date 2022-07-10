@@ -1,0 +1,33 @@
+.shower-info-title {
+  margin: 3vh 3vw;
+  width: 90%;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.link-list {
+  margin: 0vh 4vw;
+}
+
+.link {
+  margin: 2vh 0vw;
+}
+
+.shower-data {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-around;
+  margin: 3vh 3vw;
+  font-size: 26px;
+}
+
+.shower-data-text {
+  margin: 2vh 0vw;
+}
+
+.shower-data-num {
+  margin: 2vh 0vw;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,37 @@
+.info-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  margin: 6vh 5vw;
+  width: 70vw;
+  height: 30vh;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075)
+  ;
+}
+
+.main-info-title {
+  margin: 3vh 3vw;
+  width: 40%;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.shower-fact {
+  margin: 2vh 3vw;
+  width: 60%;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.main-info-photo {
+  height: 100%;
+}
+.main-info-pic {
+  height: 100%;
+}

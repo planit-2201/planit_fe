@@ -1,0 +1,11 @@
+#basic-button {
+  background-color: #DCF6C7;
+  color: black;
+  border-radius: 100%;
+  height: 7vh;
+  transform: scaleX(80%);
+}
+
+#burger-icon {
+  transform: scale(150%);
+}

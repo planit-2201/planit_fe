@@ -1,0 +1,44 @@
+.item-counter-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60vw;
+  height: 10vh;
+  margin-left: 10vw;
+}
+
+.item-counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075)
+  ;
+}
+
+.item-increment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+}
+
+.item-number {
+  font-size: 24px;
+}
+
+.item-increment-btn {
+  border: none;
+  background-color: white;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: none;
+}
