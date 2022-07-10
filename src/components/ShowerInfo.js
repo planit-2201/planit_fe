@@ -50,4 +50,6 @@ const ShowerInfo = ({ todaysSeconds, todaysMinutes, setTodaysSeconds, setTodaysM
 
 // Add button to record time, or auto post at midnight?
 
+// Fetch user's average time and weekly total. Display them.
+
 export default ShowerInfo;
