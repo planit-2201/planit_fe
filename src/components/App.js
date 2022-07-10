@@ -4,9 +4,14 @@ import MainInfo from './MainInfo'
 import ShowerInfo from './ShowerInfo'
 import ItemCounters from './ItemCounters'
 import { useQuery, gql } from '@apollo/client';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [todaysSeconds, setTodaysSeconds] = useState(0);
+  const [todaysMinutes, setTodaysMinutes] = useState(0);
+
 
   const GET_USER = gql`
     query getUser {
@@ -36,7 +41,12 @@ function App() {
       </section>
       <section className='main-content'>
         <MainInfo />
-        <ShowerInfo />
+        <ShowerInfo
+          todaysSeconds={todaysSeconds}
+          setTodaysSeconds={setTodaysSeconds}
+          todaysMinutes={todaysMinutes}
+          setTodaysMinutes={setTodaysMinutes}
+        />
       </section>
       <section className='item-counters'>
         <ItemCounters />
