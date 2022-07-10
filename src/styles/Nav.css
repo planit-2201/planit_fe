@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 1.5vw;
+  background-color: white;
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075)
+  ;
+}
+
+.nav-title-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10vw;
+}
+
+.nav-title {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.nav-logo {
+  height: 5vh;
+  width: auto;
+}
+
+.nav-button {
+  border: none;
+  border-radius: 100%;
+  width: 3vw;
+  height: 6vh;
+  background-color: #DCF6C7;
+}
