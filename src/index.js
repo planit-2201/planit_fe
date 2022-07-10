@@ -2,10 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://immense-hollows-78338.herokuapp.com/graphql',
+  cache: new InMemoryCache(),
+});
+
+client
+  .query({
+    query: gql`
+      query getUser {
+        getUser(id: "1") {
+          id
+          username
+          flowrate
+        }
+      }
+    `,
+  })
+  .then((result) => console.log(result));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>
+  </ApolloProvider>
 );
