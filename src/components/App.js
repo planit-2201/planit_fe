@@ -24,7 +24,7 @@ function App() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
-    return <p>data</p>
+    return <p>{data.getUser.username}</p>
   }
 
 
