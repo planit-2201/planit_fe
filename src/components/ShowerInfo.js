@@ -7,8 +7,6 @@ const ShowerInfo = ({ todaysSeconds, todaysMinutes, setTodaysSeconds, setTodaysM
   const {
     seconds,
     minutes,
-    hours,
-    days,
     isRunning,
     start,
     pause,
@@ -38,7 +36,7 @@ const ShowerInfo = ({ todaysSeconds, todaysMinutes, setTodaysSeconds, setTodaysM
         <div className='shower-data-text-box'>
           <h3 className='shower-data-text'>Average</h3>
           <h3 className='shower-data-text'>Today</h3>
-          <h3 className='shower-data-text'>Yesterday</h3>
+          <h3 className='shower-data-text'>The Week's Total</h3>
         </div>
         <div className='shower-data-num-box'>
           <h3 className='shower-data-num'>6:19</h3>
@@ -49,7 +47,6 @@ const ShowerInfo = ({ todaysSeconds, todaysMinutes, setTodaysSeconds, setTodaysM
     </section>
   )
 }
-
 
 // Add button to record time, or auto post at midnight?
 
