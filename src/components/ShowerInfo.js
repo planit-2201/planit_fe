@@ -1,6 +1,19 @@
 import '../styles/ShowerInfo.css'
+import { useStopwatch } from 'react-timer-hook';
 
 const ShowerInfo = () => {
+
+  const {
+    seconds,
+    minutes,
+    hours,
+    days,
+    isRunning,
+    start,
+    pause,
+    reset,
+  } = useStopwatch({ autoStart: false });
+
   return (
     <section className='info-container'>
       <div className='shower-info-text'>
@@ -22,6 +35,15 @@ const ShowerInfo = () => {
           <h3 className='shower-data-num'>5:26</h3>
           <h3 className='shower-data-num'>7:12</h3>
         </div>
+      </div>
+      <div style={{textAlign: 'center'}}>
+        <p>Your Shower Timer</p>
+        <div style={{fontSize: '100px'}}>
+          <span>{minutes}</span>:<span>{seconds}</span>
+        </div>
+        <button onClick={start}>Start</button>
+        <button onClick={pause}>Pause</button>
+        <button onClick={reset}>Reset</button>
       </div>
     </section>
   )
