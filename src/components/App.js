@@ -17,31 +17,6 @@ function App() {
   const [strawCount, setStrawCount] = useState(0);
   const [weeklyAverageShowerTime, setWeeklyAverageShowerTime] = useState(0);
 
-
-  // const GET_USER = gql`
-  //   query getUser {
-  //     getUser(id: "6") {
-  //       id
-  //       username
-  //       flowrate
-  //       weeklyAverageShowerTime
-  //       weeklyAverageWaterUsage
-  //     }
-  //   }
-  // `;
-
-  // function FindUser() {
-  //   const { loading, error, data } = useQuery(GET_USER);
-    
-  //   if (loading) return <p>Loading...</p>;
-  //   if (error) return <p>Error :(</p>;
-  //   // setWeeklyAverageShowerTime(data.getUser.weeklyAverageShowerTime)
-  //   // console.log(data.getUser.weeklyAverageShowerTime)
-   
-  //   return <p>{data.getUser.username}</p>
-  // }
-
-
   return (
     <main className="App">
       <FindUser 

@@ -11,12 +11,6 @@ function FindUser({ weeklyAverageShowerTime, setWeeklyAverageShowerTime}) {
             setWeeklyAverageShowerTime(data.getUser.weeklyAverageShowerTime)
         }
     }, [data])
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>Error :(</p>;
-    // // setWeeklyAverageShowerTime(data.getUser.weeklyAverageShowerTime)
-    // // console.log(data.getUser.weeklyAverageShowerTime)
-
-    // return <p>{data.getUser.username}</p>
 }
 
 export default FindUser
