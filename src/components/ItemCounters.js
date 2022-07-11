@@ -11,26 +11,6 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
       setCount(currentCount -= 1)
     }
   }
-  
-  // const handleContainerIncrement = () => {
-  //   setContainerCount(containerCount += 1) 
-  // }
-
-  // const handleContainerDecrement = () => {
-  //   if (containerCount >= 1) {
-  //     setContainerCount(containerCount -= 1)
-  //   }
-  // }
-
-  // const handleStrawIncrement = () => {
-  //   setStrawCount(strawCount += 1) 
-  // }
-
-  // const handleStrawDecrement = () => {
-  //   if (strawCount >= 1) {
-  //     setStrawCount(strawCount -= 1)
-  //   }
-  // }
 
   return (
     <section className='item-counter-container'>
