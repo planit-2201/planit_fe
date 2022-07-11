@@ -11,6 +11,9 @@ function App() {
 
   const [todaysSeconds, setTodaysSeconds] = useState(0);
   const [todaysMinutes, setTodaysMinutes] = useState(0);
+  const [containerCount, setContainerCount] = useState(0);
+  const [bagCount, setBagCount] = useState(0);
+  const [strawCount, setStrawCount] = useState(0);
 
 
   const GET_USER = gql`
@@ -49,7 +52,14 @@ function App() {
         />
       </section>
       <section className='item-counters'>
-        <ItemCounters />
+        <ItemCounters 
+          containerCount={containerCount}
+          setContainerCount={setContainerCount}
+          bagCount={bagCount}
+          setBagCount={setBagCount}
+          strawCount={strawCount}
+          setStrawCount={setStrawCount}
+        />
       </section>
     </main>
   );
