@@ -7,7 +7,9 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
   }
 
   const handleContainerDecrement = () => {
-    
+    if (containerCount >= 1) {
+      setContainerCount(containerCount -= 1)
+    }
   }
 
   return (
@@ -15,7 +17,7 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
       <div className='item-counter'>
         <p className='item-name'>Single Use Containers</p>
         <div className='item-increment'>
-          <button className='item-increment-btn'>-</button>
+          <button className='item-increment-btn' onClick={handleContainerDecrement}>-</button>
           <p className='item-number'>{containerCount}</p>
           <button className='item-increment-btn' onClick={handleContainerIncrement}>+</button>
         </div>
