@@ -4,7 +4,8 @@ import MainInfo from './MainInfo'
 import ShowerInfo from './ShowerInfo'
 import ItemCounters from './ItemCounters'
 import { useQuery, gql } from '@apollo/client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import FindUser from './FindUser';
 
 
 function App() {
@@ -14,31 +15,14 @@ function App() {
   const [containerCount, setContainerCount] = useState(0);
   const [bagCount, setBagCount] = useState(0);
   const [strawCount, setStrawCount] = useState(0);
-
-
-  const GET_USER = gql`
-    query getUser {
-      getUser(id: "1") {
-        id
-        username
-        flowrate
-      }
-    }
-  `;
-
-  function FindUser() {
-    const { loading, error, data } = useQuery(GET_USER);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
-
-    return <p>{data.getUser.username}</p>
-  }
-
+  const [weeklyAverageShowerTime, setWeeklyAverageShowerTime] = useState(0);
 
   return (
     <main className="App">
-      <FindUser />
+      <FindUser 
+        weeklyAverageShowerTime={weeklyAverageShowerTime}
+        setWeeklyAverageShowerTime={setWeeklyAverageShowerTime}
+      />
       <section className='nav-bar'>
         <Nav />
       </section>
