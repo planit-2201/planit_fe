@@ -1,6 +1,11 @@
-import '../styles/ItemCounters.css'
+import '../styles/ItemCounters.css';
+import { gql, useMutation } from '@apollo/client';
+import {SUBMIT_RECORD} from './Queries.js';
+import dayjs from 'dayjs';
 
-const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount }) => {
+const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
+
+let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
 
   const handleIncrement = (currentCount, setCount) => {
     setCount(currentCount += 1)
@@ -9,6 +14,24 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
   const handleDecrement = (currentCount, setCount) => {
     if (currentCount >= 1) {
       setCount(currentCount -= 1)
+    }
+  }
+
+  const [createDailyRecord, { error }] = useMutation(SUBMIT_RECORD)
+
+  const submitRecord = () => {
+    createDailyRecord({
+      variables: {
+        date: dayjs(Date()).format('YYYY-MM-DD'),
+        userId: 8,
+        bagCount: bagCount,
+        containerCount: containerCount,
+        strawCount: strawCount,
+        showerTime: showerTime
+      }
+    })
+    if (error) {
+      console.log(error);
     }
   }
 
@@ -37,6 +60,9 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
           <p className='item-number'>{bagCount}</p>
           <button className='item-increment-btn' onClick={() => handleIncrement(bagCount, setBagCount)}>+</button>
         </div>
+      </div>
+      <div className='item-counter'>
+        <button className='submit-button' onClick={submitRecord}>Submit Daily Record!</button>
       </div>
     </section>
   )

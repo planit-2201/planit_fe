@@ -22,7 +22,7 @@ function App() {
 
   return (
     <main className="App">
-      <FindUser 
+      <FindUser
         weeklyAverageShowerTime={weeklyAverageShowerTime}
         setWeeklyAverageShowerTime={setWeeklyAverageShowerTime}
         setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
@@ -30,7 +30,7 @@ function App() {
         setUsername={setUsername}
       />
       <section className='nav-bar'>
-        <Nav 
+        <Nav
           username={username}
         />
       </section>
@@ -51,13 +51,15 @@ function App() {
         />
       </section>
       <section className='item-counters'>
-        <ItemCounters 
+        <ItemCounters
           containerCount={containerCount}
           setContainerCount={setContainerCount}
           bagCount={bagCount}
           setBagCount={setBagCount}
           strawCount={strawCount}
           setStrawCount={setStrawCount}
+          totalSeconds={totalSeconds}
+          totalMinutes={totalMinutes}
         />
       </section>
     </main>
