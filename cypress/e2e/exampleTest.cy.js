@@ -2,18 +2,11 @@ import { aliasQuery, aliasMutation, hasOperationName } from '../utils/graphql-te
 
 describe ('Dashboard', () => {
 
-  beforeEach(() => {
-    cy.intercept('POST', 'https://immense-hollows-78338.herokuapp.com/graphql', (req) => {
-
-      aliasQuery(req, 'getUser')
-      aliasMutation(req, 'createDailyRecord')
-    })
-    .visit('http://localhost:3000/', )
-  })
-
   it('Should display homepage information', () => {
     cy.intercept('POST', 'https://immense-hollows-78338.herokuapp.com/graphql', (req) => {
       const { body } = req
+      aliasQuery(req, 'getUser')
+      aliasMutation(req, 'createDailyRecord')
       if (hasOperationName(req, 'getUser')) {
         // Declare the alias from the initial intercept in the beforeEach
         req.alias = 'gqlgetUserQuery'
@@ -24,9 +17,13 @@ describe ('Dashboard', () => {
           res.body.data.getUser.weeklyAverageShowerTime = 1000
           res.body.data.getUser.weeklyAverageWaterUsage = 1000
           res.body.data.getUser.thirtydayAverageShowerTime = 2000
+          console.log("Running")
         })
+      } else {
+        console.log("Not Running")
       }
     })
+    cy.visit('http://localhost:3000/')
     cy.contains('Did You Know...')
     cy.contains('The average American uses 5,336 gallons of water on showers per year?')
     cy.contains('If the average shower was 5 minutes long, that number would drop to 3650!')
