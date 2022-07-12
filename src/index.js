@@ -13,7 +13,7 @@ client
   .query({
     query: gql`
       query getUser {
-        getUser(id: "8") {
+        getUser(id: "6") {
           id
           username
           flowrate

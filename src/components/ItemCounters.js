@@ -1,12 +1,11 @@
 import '../styles/ItemCounters.css';
 import { gql, useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
+import dayjs from 'dayjs';
+
 const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
 
 let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
-
-console.log("totalMinutes", parseInt(totalMinutes));
-console.log("totalSeconds", parseInt(totalSeconds));
 
   const handleIncrement = (currentCount, setCount) => {
     setCount(currentCount += 1)
@@ -20,14 +19,10 @@ console.log("totalSeconds", parseInt(totalSeconds));
 
   const [createDailyRecord, { error }] = useMutation(SUBMIT_RECORD)
 
-  // const findTimeInSeconds = () => {
-  //    totalMinutes * 60 + totalSeconds
-  // }
-
   const submitRecord = () => {
     createDailyRecord({
       variables: {
-        date: "2022-07-12",
+        date: dayjs(Date()).format('YYYY-MM-DD'),
         userId: 8,
         bagCount: bagCount,
         containerCount: containerCount,
