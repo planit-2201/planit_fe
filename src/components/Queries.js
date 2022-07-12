@@ -30,7 +30,9 @@ export const GET_USER = gql`
         strawCount: $strawCount
         showerTime: $showerTime
       }) {
-        userId
+        containerCount
+        date
+        showerTime
       }
     }
   `;

@@ -1,7 +1,12 @@
 import '../styles/ItemCounters.css';
 import { gql, useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
-const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount }) => {
+const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
+
+let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
+
+console.log("totalMinutes", parseInt(totalMinutes));
+console.log("totalSeconds", parseInt(totalSeconds));
 
   const handleIncrement = (currentCount, setCount) => {
     setCount(currentCount += 1)
@@ -15,23 +20,24 @@ const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount
 
   const [createDailyRecord, { error }] = useMutation(SUBMIT_RECORD)
 
+  // const findTimeInSeconds = () => {
+  //    totalMinutes * 60 + totalSeconds
+  // }
+
   const submitRecord = () => {
     createDailyRecord({
       variables: {
         date: "2022-07-12",
         userId: 8,
-        bagCount: 3,
-        containerCount: 3,
-        strawCount: 2,
-        showerTime: 500
+        bagCount: bagCount,
+        containerCount: containerCount,
+        strawCount: strawCount,
+        showerTime: showerTime
       }
     })
-
     if (error) {
       console.log(error);
     }
-
-    console.log("did this work?")
   }
 
   return (
