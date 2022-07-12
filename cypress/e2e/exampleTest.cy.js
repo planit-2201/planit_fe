@@ -8,7 +8,7 @@ describe ('Dashboard', () => {
       aliasQuery(req, 'getUser')
       aliasMutation(req, 'createDailyRecord')
     })
-    .visit('http://localhost:3000/')
+    .visit('http://localhost:3000/', )
   })
 
   it('Should display homepage information', () => {
@@ -27,7 +27,6 @@ describe ('Dashboard', () => {
         })
       }
     })
-    cy.visit('http://localhost:3000/')
     cy.contains('Did You Know...')
     cy.contains('The average American uses 5,336 gallons of water on showers per year?')
     cy.contains('If the average shower was 5 minutes long, that number would drop to 3650!')
