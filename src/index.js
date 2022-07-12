@@ -13,12 +13,13 @@ client
   .query({
     query: gql`
       query getUser {
-        getUser(id: "6") {
+        getUser(id: "8") {
           id
           username
           flowrate
           weeklyAverageShowerTime
           weeklyAverageWaterUsage
+          thirtydayAverageShowerTime
         }
       }
     `,
