@@ -19,15 +19,54 @@
   width: 40%;
   align-items: center;
   justify-content: space-around;
-  margin: 3vh 3vw;
+  margin: 0vh 3vw;
   font-size: 26px;
 }
 
 .shower-data-text {
-  margin: 2vh 0vw;
+  margin: 4vh 0vw;
+  letter-spacing: 2px;
 }
 
 .shower-data-num {
-  margin: 2vh 0vw;
-  letter-spacing: 2px;
+  margin: 4vh 0vw;
+  letter-spacing: 3px;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  margin: 2vh 2vw;
+}
+
+.timer-title {
+  font-size: 26px;
+}
+
+.timer-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 35%;
+}
+
+.timer-btn {
+  width: 7vw;
+  height: 2.5vh;
+  border: none;
+  border-radius: 4px;
+  background-color: #DCF6C7;
+}
+
+.timer-btn:hover {
+  transform: translateY(-2px);
+  transition: ease-in 0.15s;
+}
+
+.timer-btn:active {
+  transform: translateY(0px);
+  transition: ease-in 0.15s;
 }

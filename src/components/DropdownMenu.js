@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import '../styles/DropdownMenu.css'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
-export default function DropdownMenu() {
+export default function DropdownMenu({ username }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -39,6 +39,7 @@ export default function DropdownMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
+        <MenuItem className='menu-item' id='log-in-msg'>{username} is logged in</MenuItem>
         <MenuItem className='menu-item' onClick={handleClose}>5 Min Shower</MenuItem>
         <MenuItem className='menu-item' onClick={handleClose}>Recycling</MenuItem>
         <MenuItem className='menu-item' onClick={handleClose}>Composting</MenuItem>

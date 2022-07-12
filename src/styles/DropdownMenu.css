@@ -9,3 +9,8 @@
 #burger-icon {
   transform: scale(150%);
 }
+
+#log-in-msg {
+  background-color: #DCF6C7;
+  cursor: auto;
+}
