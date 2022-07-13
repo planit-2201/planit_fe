@@ -2,16 +2,16 @@ import '../styles/ShowerInfo.css'
 import { useStopwatch } from 'react-timer-hook';
 import { useEffect } from 'react';
 
-const ShowerInfo = ({ 
-  todaysSeconds, 
-  todaysMinutes, 
-  setTodaysSeconds, 
-  setTodaysMinutes, 
-  setTotalSeconds, 
-  totalSeconds, 
-  setTotalMinutes, 
-  totalMinutes, 
-  weeklyAverageShowerTime, 
+const ShowerInfo = ({
+  todaysSeconds,
+  todaysMinutes,
+  setTodaysSeconds,
+  setTodaysMinutes,
+  setTotalSeconds,
+  totalSeconds,
+  setTotalMinutes,
+  totalMinutes,
+  weeklyAverageShowerTime,
   thirtyDayAverageShowerTime }) => {
 
   let {
@@ -40,7 +40,12 @@ const ShowerInfo = ({
     setTotalMinutes(min)
   }
 
-  
+  const startShower = () => {
+    if (!isRunning) {
+      start()
+    }
+  }
+
 
   return (
     <section className='info-container'>
@@ -50,7 +55,7 @@ const ShowerInfo = ({
           <span>{minutes}</span>:<span>{seconds}</span>
         </div>
         <div className='timer-btn-container'>
-          <button className='timer-btn' onClick={start}>Start</button>
+          <button className='timer-btn' onClick={startShower}>Start</button>
           <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes)}}>Pause</button>
           <button className='timer-btn' onClick={() => {reset(); pause()}}>Reset</button>
         </div>
@@ -71,8 +76,8 @@ const ShowerInfo = ({
   )
 }
 
-// Add button to record time, or auto post at midnight?
-
-// Fetch user's average time and weekly total. Display them.
+// If a user clicks start while the timer is already running, don't reset it.
+  // Fixed - used the built in isRunning
+// As the timer changes, reflect the new state in the UI
 
 export default ShowerInfo;
