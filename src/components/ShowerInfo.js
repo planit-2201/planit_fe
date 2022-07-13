@@ -24,7 +24,7 @@ const ShowerInfo = ({
   } = useStopwatch({ autoStart: false });
 
   useEffect(() => {
-    if (todaysSeconds < 10) {
+    if (todaysSeconds < 9) {
       setTodaysSeconds('0' + seconds)
     } else {
       setTodaysSeconds(seconds)
@@ -86,7 +86,7 @@ const ShowerInfo = ({
   // Fixed - used the built in isRunning
 // As the timer changes, reflect the new state in the UI
   // Fixed - had to JavaScript interpolate a different piece of state to reflect this
-// When the timer is reset, then the user clicks 'start' the time resets to the last time. Fix this 
+// When the timer is reset, then the user clicks 'start' the time resets to the last time. Fix this
   // Fixed - had to add a helper function that resets the total minutes and seconds in state back to 0,
   // Put the reset function inside of this helper function
   // Had to change the order in which the two functions were invoked when the reset button is clicked

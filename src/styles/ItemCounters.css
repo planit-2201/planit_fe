@@ -31,14 +31,18 @@
   width: 15%;
 }
 
-.item-number {
+.container-item-number,
+.straw-item-number,
+.bag-item-number{
   font-size: 24px;
 }
 
+.item-decrement-btn,
 .item-increment-btn {
   border: none;
   background-color: white;
   font-size: 22px;
   font-weight: 600;
   box-shadow: none;
+  z-index: 10;
 }
