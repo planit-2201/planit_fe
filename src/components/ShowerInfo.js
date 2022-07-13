@@ -24,7 +24,7 @@ const ShowerInfo = ({
   } = useStopwatch({ autoStart: false });
 
   useEffect(() => {
-    if (todaysSeconds < 10) {
+    if (todaysSeconds < 9) {
       setTodaysSeconds('0' + seconds)
     } else {
       setTodaysSeconds(seconds)
@@ -50,6 +50,7 @@ const ShowerInfo = ({
     setTotalSeconds(0)
     setTotalMinutes(0)
     reset();
+    pause();
   }
 
 

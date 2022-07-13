@@ -1,8 +1,8 @@
 .item-counter-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 60vw;
+  width: 70vw;
   height: 10vh;
   margin-left: 10vw;
 }
@@ -13,6 +13,9 @@
   align-items: center;
   width: 30%;
   height: 100%;
+  margin: 1.5%;
+  padding: 1.5%;
+  font-size: 11px;
   background-color: white;
   border-radius: 6px;
   box-shadow:
@@ -28,17 +31,76 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 15%;
+  width: 40%;
 }
 
 .item-number {
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .item-increment-btn {
   border: none;
   background-color: white;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
   box-shadow: none;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #DCF6C7;
+  width: 80%;
+  height: 80%;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2.5px);
+  transition: ease-in 0.15s;
+}
+
+.submit-btn:active {
+  transform: translateY(0px);
+  transition: ease-in 0.15s;
+}
+
+@media screen and (min-width: 1300px) {
+  .item-counter-container {
+    width: 75vw;
+    height: 10vh;
+  }
+
+  .item-counter {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 875px) {
+  .item-counter-container {
+    width: 80vw;
+    height: 10vh;
+  }
+
+  .item-counter {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item-counter-container {
+    width: 90vw;
+    margin-left: 5vw;
+  }
+
+  .item-counter {
+    width: 30%;
+    font-size: 8px;
+  }
+
+  .submit-btn {
+    font-size: 8px;
+  }
 }

@@ -1,35 +1,23 @@
-.shower-info-title {
-  margin: 3vh 3vw;
-  width: 90%;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.link-list {
-  margin: 0vh 4vw;
-}
-
-.link {
-  margin: 2vh 0vw;
-}
-
 .shower-data {
   display: flex;
   width: 40%;
   align-items: center;
   justify-content: space-around;
-  margin: 0vh 3vw;
-  font-size: 26px;
+  margin: 0vh 6vw;
+  font-size: 16px;
+}
+
+.shower-data-text-box {
+  transform: scale(90%);
 }
 
 .shower-data-text {
-  margin: 4vh 0vw;
+  margin: 4vh 2vw;
   letter-spacing: 2px;
 }
 
 .shower-data-num {
-  margin: 4vh 0vw;
+  margin: 4vh 2vw;
   letter-spacing: 3px;
 }
 
@@ -39,6 +27,7 @@
   height: 100%;
   width: 40%;
   margin: 2vh 2vw;
+  transform: scale(80%);
 }
 
 .timer-title {
@@ -47,7 +36,6 @@
 
 .timer-btn-container {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 35%;
@@ -55,7 +43,7 @@
 
 .timer-btn {
   width: 7vw;
-  height: 2.5vh;
+  height: 3.5vh;
   border: none;
   border-radius: 4px;
   background-color: #DCF6C7;
@@ -69,4 +57,66 @@
 .timer-btn:active {
   transform: translateY(0px);
   transition: ease-in 0.15s;
+}
+
+@media screen and (min-width: 1300px) {
+  .shower-data {
+    width: 45%;
+    margin: 0vh 4vw;
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 875px) {
+  .shower-data {
+    width: 40%;
+    margin: 0vh 2vw;
+    font-size: 14px;
+  }
+
+  .shower-data-text-box {
+    transform: scale(80%);
+  }
+
+  .timer-container {
+    transform: scale(65%);
+    margin-top: -1vh;
+  }
+
+  .timer-btn-container {
+    transform: scale(120%);
+  }
+
+  .timer-btn {
+    transform: scale(130%);
+    margin: 0vh 2vw;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .shower-data {
+    width: 35%;
+    margin: 0vh 1.5vw;
+    font-size: 12px;
+  }
+
+  .shower-data-text-box {
+    transform: scale(75%);
+  }
+
+  .timer-container {
+    transform: scale(55%);
+    margin-top: -2vh;
+  }
+
+  .timer-btn-container {
+    transform: scale(130%);
+  }
+
+  .timer-btn {
+    transform: scale(150%);
+    margin: 0vh 3vw;
+    font-size: 8px;
+  }
 }

@@ -31,10 +31,12 @@
   width: auto;
 }
 
-.nav-button {
-  border: none;
-  border-radius: 100%;
-  width: 3vw;
-  height: 6vh;
-  background-color: #DCF6C7;
+@media screen and (max-width: 600px) {
+  .nav-logo {
+    transform: scale(80%);
+  }
+
+  .nav-title {
+    transform: scale(80%);
+  }
 }

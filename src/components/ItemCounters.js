@@ -62,7 +62,7 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
         </div>
       </div>
       <div className='item-counter'>
-        <button className='submit-button' onClick={submitRecord}>Submit Daily Record!</button>
+        <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>
       </div>
     </section>
   )
