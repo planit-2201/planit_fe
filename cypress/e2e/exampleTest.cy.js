@@ -8,12 +8,8 @@ describe ('Dashboard', () => {
       aliasQuery(req, 'getUser')
       aliasMutation(req, 'createDailyRecord')
       if (hasOperationName(req, 'getUser')) {
-        // Declare the alias from the initial intercept in the beforeEach
         req.alias = 'gqlgetUserQuery'
-
-        // Set req.fixture or use req.reply to modify portions of the response
         req.reply((res) => {
-          // Modify the response body directly
           res.body.data.getUser.weeklyAverageShowerTime = 1000
           res.body.data.getUser.weeklyAverageWaterUsage = 1000
           res.body.data.getUser.thirtydayAverageShowerTime = 2000
@@ -42,7 +38,22 @@ describe ('Dashboard', () => {
     cy.contains('Single Use Containers')
     cy.contains('Plastic Straws')
     cy.contains('Plastic Shopping Bags')
-    //need to test for nav and timer functionality after bug fixes and submit daily record button functionality
-
   })
+    it('Should be able to update item counters', () => {
+      cy.visit('http://localhost:3000/')
+      cy.get('.item-increment-btn').first().click().click()
+      cy.get('.container-item-number').should('have.text', '2')
+      cy.get('.item-decrement-btn').first().click().click().click()
+      cy.get('.container-item-number').should('have.text', '0')
+
+      cy.get('.item-increment-btn').eq(1).click().click()
+      cy.get('.straw-item-number').should('have.text', '2')
+      cy.get('.item-decrement-btn').eq(1).click().click().click()
+      cy.get('.straw-item-number').should('have.text', '0')
+
+      cy.get('.item-increment-btn').last().click().click()
+      cy.get('.bag-item-number').should('have.text', '2')
+      cy.get('.item-decrement-btn').last().click().click().click()
+      cy.get('.bag-item-number').should('have.text', '0')
+    })
 })

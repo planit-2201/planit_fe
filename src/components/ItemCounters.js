@@ -40,28 +40,28 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
       <div className='item-counter'>
         <p className='item-name'>Single Use Containers</p>
         <div className='item-increment'>
-          <button className='item-increment-btn' onClick={() => handleDecrement(containerCount, setContainerCount)}>-</button>
-          <p className='item-number'>{containerCount}</p>
+          <button className='item-decrement-btn' onClick={() => handleDecrement(containerCount, setContainerCount)}>-</button>
+          <p className='container-item-number'>{containerCount}</p>
           <button className='item-increment-btn' onClick={() => handleIncrement(containerCount, setContainerCount)}>+</button>
         </div>
       </div>
       <div className='item-counter'>
         <p className='item-name'>Plastic Straws</p>
         <div className='item-increment'>
-        <button className='item-increment-btn' onClick={() => handleDecrement(strawCount, setStrawCount)}>-</button>
-          <p className='item-number'>{strawCount}</p>
+        <button className='item-decrement-btn' onClick={() => handleDecrement(strawCount, setStrawCount)}>-</button>
+          <p className='straw-item-number'>{strawCount}</p>
           <button className='item-increment-btn' onClick={() => handleIncrement(strawCount, setStrawCount)}>+</button>
         </div>
       </div>
       <div className='item-counter'>
         <p className='item-name'>Plastic Shopping Bags</p>
         <div className='item-increment'>
-          <button className='item-increment-btn' onClick={() => handleDecrement(bagCount, setBagCount)}>-</button>
-          <p className='item-number'>{bagCount}</p>
+          <button className='item-decrement-btn' onClick={() => handleDecrement(bagCount, setBagCount)}>-</button>
+          <p className='bag-item-number'>{bagCount}</p>
           <button className='item-increment-btn' onClick={() => handleIncrement(bagCount, setBagCount)}>+</button>
         </div>
       </div>
-      <div className='item-counter'>
+      <div>
         <button className='submit-button' onClick={submitRecord}>Submit Daily Record!</button>
       </div>
     </section>
