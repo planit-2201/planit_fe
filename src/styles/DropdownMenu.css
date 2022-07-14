@@ -14,3 +14,13 @@
   background-color: #DCF6C7;
   cursor: auto;
 }
+
+@media screen and (max-width: 600px) {
+  #basic-button {
+    transform: scale(60%, 80%);
+  }
+
+  #burger-icon {
+    transform: scale(90%);
+  }
+}

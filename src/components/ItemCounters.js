@@ -61,8 +61,8 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
           <button className='item-increment-btn' onClick={() => handleIncrement(bagCount, setBagCount)}>+</button>
         </div>
       </div>
-      <div>
-        <button className='submit-button' onClick={submitRecord}>Submit Daily Record!</button>
+      <div className='item-counter'>
+        <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>
       </div>
     </section>
   )

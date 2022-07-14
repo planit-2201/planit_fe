@@ -50,6 +50,7 @@ const ShowerInfo = ({
     setTotalSeconds(0)
     setTotalMinutes(0)
     reset();
+    pause();
   }
 
 
