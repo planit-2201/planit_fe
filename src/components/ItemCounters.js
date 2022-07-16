@@ -23,7 +23,7 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
     createDailyRecord({
       variables: {
         date: dayjs(Date()).format('YYYY-MM-DD'),
-        userId: 6,
+        userId: 20,
         bagCount: bagCount,
         containerCount: containerCount,
         strawCount: strawCount,
