@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
 import dayjs from 'dayjs';
 
-const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
+const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds, allRecords, setAllRecords, isTimerRunning, setIsTimerRunning }) => {
 
 let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
 
@@ -34,6 +34,20 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
     }
   }
 
+  const throwSubmitButtonErrors = () => {
+    let findDate = allRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD'))
+
+    if (isTimerRunning) {
+      return <p>Please pause the timer before submitting your daily record</p>
+    } else if (findDate) {
+      return <p>You've already submitted your daily record. Come back tomorrow :)</p>
+    } else {
+      return <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>
+    }
+  }
+
+  // if shower is running and user clicks submit button, 
+
   return (
     <section className='item-counter-container'>
       <div className='item-counter'>
@@ -61,7 +75,7 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
         </div>
       </div>
       <div className='item-counter'>
-        <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>
+        {throwSubmitButtonErrors()}
       </div>
     </section>
   )

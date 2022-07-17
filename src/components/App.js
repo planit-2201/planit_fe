@@ -8,9 +8,8 @@ import RecyclingInfo from './RecyclingInfo';
 import CompostingInfo from './CompostingInfo';
 import { useState } from 'react';
 import FindUser from './FindUser';
+import FindUserRecords from './FindUserRecords'
 import { Route, Switch } from 'react-router-dom';
-
-
 
 function App() {
 
@@ -25,6 +24,8 @@ function App() {
   const [thirtyDayAverageShowerTime, setThirtyDayAverageShowerTime] = useState(0);
   const [username, setUsername] = useState('');
   const [currentPage, setCurrentPage] = useState('home');
+  const [allRecords, setAllRecords] = useState([]);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
 
   return (
     <main className="App">
@@ -35,6 +36,10 @@ function App() {
         thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
         setUsername={setUsername}
         />
+      <FindUserRecords 
+        allRecords={allRecords}
+        setAllRecords={setAllRecords}
+      />
       <section className='nav-bar'>
         <Nav
         username={username}
@@ -59,6 +64,9 @@ function App() {
                 totalMinutes={totalMinutes}
                 setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
+                allRecords={allRecords}
               />
             </section>
             <section className='item-counters'>
@@ -71,6 +79,9 @@ function App() {
                 setStrawCount={setStrawCount}
                 totalSeconds={totalSeconds}
                 totalMinutes={totalMinutes}
+                allRecords={allRecords}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
               />
             </section>
           </div>
