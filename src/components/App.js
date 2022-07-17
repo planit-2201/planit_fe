@@ -8,6 +8,7 @@ import RecyclingInfo from './RecyclingInfo';
 import CompostingInfo from './CompostingInfo';
 import { useState } from 'react';
 import FindUser from './FindUser';
+import FindUserRecords from './FindUserRecords'
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -25,6 +26,7 @@ function App() {
   const [thirtyDayAverageShowerTime, setThirtyDayAverageShowerTime] = useState(0);
   const [username, setUsername] = useState('');
   const [currentPage, setCurrentPage] = useState('home');
+  const [allRecords, setAllRecords] = useState({});
 
   return (
     <main className="App">
@@ -35,6 +37,10 @@ function App() {
         thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
         setUsername={setUsername}
         />
+      <FindUserRecords 
+        allRecords={allRecords}
+        setAllRecords={setAllRecords}
+      />
       <section className='nav-bar'>
         <Nav
         username={username}
