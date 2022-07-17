@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const GET_USER = gql`
     query getUser {
-      getUser(id: "20") {
+      getUser(id: "186") {
         id
         username
         flowrate

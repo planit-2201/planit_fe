@@ -23,13 +23,9 @@ const ShowerInfo = ({
     reset,
   } = useStopwatch({ autoStart: false });
 
-  // useEffect(() => {
-  //   if (todaysSeconds < 9) {
-  //     setTodaysSeconds('0' + seconds)
-  //   } else {
-  //     setTodaysSeconds(seconds)
-  //   }
-  // }, [seconds])
+  useEffect(() => {
+    setTodaysSeconds(seconds)
+  }, [seconds])
 
   useEffect(() => {
     setTodaysMinutes(minutes)
@@ -47,12 +43,10 @@ const ShowerInfo = ({
   }
 
   const resetShower = () => {
+    reset(0, false);
     setTotalSeconds(0)
     setTotalMinutes(0)
-    reset();
-    pause();
   }
-
 
   return (
     <section className='info-container'>
@@ -64,7 +58,7 @@ const ShowerInfo = ({
         <div className='timer-btn-container'>
           <button className='timer-btn' onClick={startShower}>Start</button>
           <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes)}}>Pause</button>
-          <button className='timer-btn' onClick={() => {pause(); resetShower()}}>Reset</button>
+          <button className='timer-btn' onClick={resetShower}>Reset</button>
         </div>
       </div>
       <div className='shower-data'>
