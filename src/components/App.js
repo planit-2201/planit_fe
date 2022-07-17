@@ -26,7 +26,7 @@ function App() {
   const [thirtyDayAverageShowerTime, setThirtyDayAverageShowerTime] = useState(0);
   const [username, setUsername] = useState('');
   const [currentPage, setCurrentPage] = useState('home');
-  const [allRecords, setAllRecords] = useState({});
+  const [allRecords, setAllRecords] = useState([]);
 
   return (
     <main className="App">
@@ -65,6 +65,8 @@ function App() {
                 totalMinutes={totalMinutes}
                 setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
+                allRecords={allRecords}
+                setAllRecords={setAllRecords}
               />
             </section>
             <section className='item-counters'>
