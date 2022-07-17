@@ -18,7 +18,7 @@ export const GET_USER = gql`
       $date: String!
       $userId: Int!
       $bagCount: Int!
-      $containerCount: Int!
+      $bottleCount: Int!
       $strawCount: Int!
       $showerTime: Int!
     ) {
@@ -26,11 +26,11 @@ export const GET_USER = gql`
         date: $date
         userId: $userId
         bagCount: $bagCount
-        containerCount: $containerCount
+        bottleCount: $bottleCount
         strawCount: $strawCount
         showerTime: $showerTime
       }) {
-        containerCount
+        bottleCount
         date
         showerTime
       }
