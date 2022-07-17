@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
 import dayjs from 'dayjs';
 
-const ItemCounters = ({ containerCount, setContainerCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
+const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
 
 let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
 
@@ -18,14 +18,13 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
   }
 
   const [createDailyRecord, { error }] = useMutation(SUBMIT_RECORD)
-
   const submitRecord = () => {
     createDailyRecord({
       variables: {
         date: dayjs(Date()).format('YYYY-MM-DD'),
-        userId: 8,
+        userId: 186,
         bagCount: bagCount,
-        containerCount: containerCount,
+        bottleCount: bottleCount,
         strawCount: strawCount,
         showerTime: showerTime
       }
@@ -38,11 +37,11 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
   return (
     <section className='item-counter-container'>
       <div className='item-counter'>
-        <p className='item-name'>Single Use Containers</p>
+        <p className='item-name'>Plastic Bottles</p>
         <div className='item-increment'>
-          <button className='item-decrement-btn' onClick={() => handleDecrement(containerCount, setContainerCount)}>-</button>
-          <p className='container-item-number'>{containerCount}</p>
-          <button className='item-increment-btn' onClick={() => handleIncrement(containerCount, setContainerCount)}>+</button>
+          <button className='item-decrement-btn' onClick={() => handleDecrement(bottleCount, setBottleCount)}>-</button>
+          <p className='bottle-item-number'>{bottleCount}</p>
+          <button className='item-increment-btn' onClick={() => handleIncrement(bottleCount, setBottleCount)}>+</button>
         </div>
       </div>
       <div className='item-counter'>

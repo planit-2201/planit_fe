@@ -24,11 +24,7 @@ const ShowerInfo = ({
   } = useStopwatch({ autoStart: false });
 
   useEffect(() => {
-    if (todaysSeconds < 9) {
-      setTodaysSeconds('0' + seconds)
-    } else {
-      setTodaysSeconds(seconds)
-    }
+    setTodaysSeconds(seconds)
   }, [seconds])
 
   useEffect(() => {
@@ -47,24 +43,22 @@ const ShowerInfo = ({
   }
 
   const resetShower = () => {
+    reset(0, false);
     setTotalSeconds(0)
     setTotalMinutes(0)
-    reset();
-    pause();
   }
-
 
   return (
     <section className='info-container'>
       <div className='timer-container'style={{textAlign: 'center'}}>
         <p className='timer-title'>Your Shower Timer</p>
         <div className='timer-nums'style={{fontSize: '100px'}}>
-          <span>{minutes}</span>:<span>{seconds}</span>
+          <span>{minutes}</span>:<span>{String(seconds).padStart(2, '0')}</span>
         </div>
         <div className='timer-btn-container'>
           <button className='timer-btn' onClick={startShower}>Start</button>
           <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes)}}>Pause</button>
-          <button className='timer-btn' onClick={() => {pause(); resetShower()}}>Reset</button>
+          <button className='timer-btn' onClick={resetShower}>Reset</button>
         </div>
       </div>
       <div className='shower-data'>
@@ -74,9 +68,9 @@ const ShowerInfo = ({
           <h3 className='shower-data-text'>30 Day Average</h3>
         </div>
         <div className='shower-data-num-box'>
-          <h3 className='shower-data-num'>{todaysMinutes}:{todaysSeconds}</h3>
-          <h3 className='shower-data-num'>{Math.floor(weeklyAverageShowerTime/60)}:{weeklyAverageShowerTime % 60}</h3>
-          <h3 className='shower-data-num'>{Math.floor(thirtyDayAverageShowerTime/60)}:{thirtyDayAverageShowerTime % 60}</h3>
+          <h3 className='shower-data-num'>{todaysMinutes}:{String(todaysSeconds).padStart(2, '0')}</h3>
+          <h3 className='shower-data-num'>{Math.floor(weeklyAverageShowerTime/60)}:{String(weeklyAverageShowerTime % 60).padStart(2, '0')}</h3>
+          <h3 className='shower-data-num'>{Math.floor(thirtyDayAverageShowerTime/60)}:{String(thirtyDayAverageShowerTime % 60).padStart(2, '0')}</h3>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ function App() {
   const [todaysMinutes, setTodaysMinutes] = useState(0);
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [totalMinutes, setTotalMinutes] = useState(0);
-  const [containerCount, setContainerCount] = useState(0);
+  const [bottleCount, setBottleCount] = useState(0);
   const [bagCount, setBagCount] = useState(0);
   const [strawCount, setStrawCount] = useState(0);
   const [weeklyAverageShowerTime, setWeeklyAverageShowerTime] = useState(0);
@@ -63,8 +63,8 @@ function App() {
             </section>
             <section className='item-counters'>
               <ItemCounters
-                containerCount={containerCount}
-                setContainerCount={setContainerCount}
+                bottleCount={bottleCount}
+                setBottleCount={setBottleCount}
                 bagCount={bagCount}
                 setBagCount={setBagCount}
                 strawCount={strawCount}
