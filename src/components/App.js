@@ -66,6 +66,7 @@ function App() {
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
                 isTimerRunning={isTimerRunning}
                 setIsTimerRunning={setIsTimerRunning}
+                allRecords={allRecords}
               />
             </section>
             <section className='item-counters'>
@@ -79,7 +80,6 @@ function App() {
                 totalSeconds={totalSeconds}
                 totalMinutes={totalMinutes}
                 allRecords={allRecords}
-                setAllRecords={setAllRecords}
                 isTimerRunning={isTimerRunning}
                 setIsTimerRunning={setIsTimerRunning}
               />
