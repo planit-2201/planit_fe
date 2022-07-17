@@ -12,9 +12,7 @@ const ShowerInfo = ({
   setTotalMinutes,
   totalMinutes,
   weeklyAverageShowerTime,
-  thirtyDayAverageShowerTime,
-  allRecords,
-  setAllRecords }) => {
+  thirtyDayAverageShowerTime }) => {
 
   let {
     seconds,

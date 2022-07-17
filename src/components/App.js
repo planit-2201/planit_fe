@@ -65,8 +65,6 @@ function App() {
                 totalMinutes={totalMinutes}
                 setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
-                allRecords={allRecords}
-                setAllRecords={setAllRecords}
               />
             </section>
             <section className='item-counters'>
@@ -79,6 +77,8 @@ function App() {
                 setStrawCount={setStrawCount}
                 totalSeconds={totalSeconds}
                 totalMinutes={totalMinutes}
+                allRecords={allRecords}
+                setAllRecords={setAllRecords}
               />
             </section>
           </div>

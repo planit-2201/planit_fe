@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
 import dayjs from 'dayjs';
 
-const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds }) => {
+const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds, allRecords, setAllRecords }) => {
 
 let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
 
@@ -34,6 +34,12 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
     }
   }
 
+  const preventDuplicateSubmit = () => {
+    let findDate = allRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD'))
+    console.log(findDate)
+    return findDate
+  }
+
   return (
     <section className='item-counter-container'>
       <div className='item-counter'>
@@ -61,7 +67,7 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
         </div>
       </div>
       <div className='item-counter'>
-        <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>
+        {preventDuplicateSubmit() ? <p>You've already submitted your daily record. Come back tomorrow :)</p> : <button className='submit-btn' onClick={submitRecord}>Submit Daily Record!</button>}
       </div>
     </section>
   )
