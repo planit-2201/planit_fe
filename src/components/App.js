@@ -80,6 +80,8 @@ function App() {
                 totalMinutes={totalMinutes}
                 allRecords={allRecords}
                 setAllRecords={setAllRecords}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
               />
             </section>
           </div>
