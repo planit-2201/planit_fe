@@ -42,9 +42,9 @@ describe ('Dashboard', () => {
     it('Should be able to update item counters', () => {
       cy.visit('http://localhost:3000/')
       cy.get('.item-increment-btn').first().click().click()
-      cy.get('.container-item-number').should('have.text', '2')
+      cy.get('.bottle-item-number').should('have.text', '2')
       cy.get('.item-decrement-btn').first().click().click().click()
-      cy.get('.container-item-number').should('have.text', '0')
+      cy.get('.bottle-item-number').should('have.text', '0')
 
       cy.get('.item-increment-btn').eq(1).click().click()
       cy.get('.straw-item-number').should('have.text', '2')
