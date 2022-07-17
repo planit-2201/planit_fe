@@ -35,7 +35,7 @@ describe ('Dashboard', () => {
     cy.contains('0:0')
     cy.contains('16:40')
     cy.contains('33:20')
-    cy.contains('Single Use Containers')
+    cy.contains('Plastic Bottles')
     cy.contains('Plastic Straws')
     cy.contains('Plastic Shopping Bags')
   })
