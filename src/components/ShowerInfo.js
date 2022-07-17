@@ -12,7 +12,9 @@ const ShowerInfo = ({
   setTotalMinutes,
   totalMinutes,
   weeklyAverageShowerTime,
-  thirtyDayAverageShowerTime }) => {
+  thirtyDayAverageShowerTime,
+  isTimerRunning,
+  setIsTimerRunning }) => {
 
   let {
     seconds,
@@ -39,6 +41,7 @@ const ShowerInfo = ({
   const startShower = () => {
     if (!isRunning) {
       start()
+      setIsTimerRunning(true)
     }
   }
 
@@ -46,6 +49,7 @@ const ShowerInfo = ({
     reset(0, false);
     setTotalSeconds(0)
     setTotalMinutes(0)
+    setIsTimerRunning(false)
   }
 
   return (
@@ -57,7 +61,7 @@ const ShowerInfo = ({
         </div>
         <div className='timer-btn-container'>
           <button className='timer-btn' onClick={startShower}>Start</button>
-          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes)}}>Pause</button>
+          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
           <button className='timer-btn' onClick={resetShower}>Reset</button>
         </div>
       </div>

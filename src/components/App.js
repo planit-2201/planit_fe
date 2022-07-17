@@ -11,8 +11,6 @@ import FindUser from './FindUser';
 import FindUserRecords from './FindUserRecords'
 import { Route, Switch } from 'react-router-dom';
 
-
-
 function App() {
 
   const [todaysSeconds, setTodaysSeconds] = useState(0);
@@ -27,6 +25,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [currentPage, setCurrentPage] = useState('home');
   const [allRecords, setAllRecords] = useState([]);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
 
   return (
     <main className="App">
@@ -65,6 +64,8 @@ function App() {
                 totalMinutes={totalMinutes}
                 setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
               />
             </section>
             <section className='item-counters'>
