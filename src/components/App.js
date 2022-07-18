@@ -6,6 +6,7 @@ import ItemCounters from './ItemCounters';
 import ShowerMinInfo from './ShowerMinInfo';
 import RecyclingInfo from './RecyclingInfo';
 import CompostingInfo from './CompostingInfo';
+import Error from './Error';
 import { useState } from 'react';
 import FindUser from './FindUser';
 import { Route, Switch } from 'react-router-dom';
@@ -90,6 +91,7 @@ function App() {
             <CompostingInfo />
           </div>
         }} />
+        <Route path="*" component={Error} />
       </Switch>
     </main>
   );
