@@ -4,8 +4,9 @@ import MainInfo from './MainInfo';
 import ShowerInfo from './ShowerInfo';
 import ItemCounters from './ItemCounters';
 import ShowerMinInfo from './ShowerMinInfo';
-import RecyclingInfo from './RecyclingInfo';
-import CompostingInfo from './CompostingInfo';
+import BottleInfo from './BottleInfo';
+import StrawInfo from './StrawInfo';
+import BagInfo from './BagInfo';
 import { useState } from 'react';
 import FindUser from './FindUser';
 import FindUserRecords from './FindUserRecords'
@@ -91,14 +92,19 @@ function App() {
             <ShowerMinInfo />
           </div>
         }} />
-        <Route exact path="/recycling" render={() => {
+        <Route exact path="/bottles" render={() => {
           return <div>
-            <RecyclingInfo />
+            <BottleInfo />
           </div>
         }} />
-        <Route exact path="/composting" render={() => {
+        <Route exact path="/straws" render={() => {
           return <div>
-            <CompostingInfo />
+            <StrawInfo />
+          </div>
+        }} />
+        <Route exact path="/bags" render={() => {
+          return <div>
+            <BagInfo />
           </div>
         }} />
         <Route path="*" component={Error} />
