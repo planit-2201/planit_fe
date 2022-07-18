@@ -36,7 +36,7 @@ function App() {
         thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
         setUsername={setUsername}
         />
-      <FindUserRecords 
+      <FindUserRecords
         allRecords={allRecords}
         setAllRecords={setAllRecords}
       />
@@ -101,6 +101,7 @@ function App() {
             <CompostingInfo />
           </div>
         }} />
+        <Route path="*" component={Error} />
       </Switch>
     </main>
   );
