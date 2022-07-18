@@ -12,7 +12,6 @@ import FindUser from './FindUser';
 import { Route, Switch } from 'react-router-dom';
 
 
-
 function App() {
 
   const [todaysSeconds, setTodaysSeconds] = useState(0);
