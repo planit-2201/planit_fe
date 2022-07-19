@@ -27,6 +27,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [allRecords, setAllRecords] = useState([]);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [thirtyDayAvgGallons, setThirtyDayAvgGallons] = useState(0);
+  const [thirtyDayAvgStraws, setThirtyDayAvgStraws] = useState(0);
+  const [thirtyDayAvgBags, setThirtyDayAvgBags] = useState(0);
+  const [thirtyDayAvgBottles, setThirtyDayAvgBottles] = useState(0);
+
 
   return (
     <main className="App">
@@ -36,6 +41,10 @@ function App() {
         setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
         thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
         setUsername={setUsername}
+        setThirtyDayAvgGallons={setThirtyDayAvgGallons}
+        setThirtyDayAvgStraws={setThirtyDayAvgStraws}
+        setThirtyDayAvgBags={setThirtyDayAvgBags}
+        setThirtyDayAvgBottles={setThirtyDayAvgBottles}
         />
       <FindUserRecords
         allRecords={allRecords}
@@ -93,6 +102,7 @@ function App() {
               username={username}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
+              thirtyDayAvgGallons={thirtyDayAvgGallons}
             />
           </div>
         }} />
@@ -102,6 +112,7 @@ function App() {
               username={username}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
+              thirtyDayAvgBottles={thirtyDayAvgBottles}
             />
           </div>
         }} />
@@ -111,6 +122,7 @@ function App() {
               username={username}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
+              thirtyDayAvgStraws={thirtyDayAvgStraws}
             />
           </div>
         }} />
@@ -120,6 +132,7 @@ function App() {
               username={username}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
+              thirtyDayAvgBags={thirtyDayAvgBags}
             />
           </div>
         }} />
