@@ -9,11 +9,15 @@ export const GET_USER = gql`
 		weeklyAverageShowerTime
 		weeklyAverageWaterUsage
 		thirtydayAverageShowerTime
+		thirtydayAverageWaterUsage
+		thirtydayAverageBottleCount
+		thirtydayAverageBagCount
+		thirtydayUserAverageStrawCount
 	  }
 	}
   `;
 
-  export const GET_USER_RECORDS = gql` 
+  export const GET_USER_RECORDS = gql`
     query getUserRecords {
       getUserDailyRecords(userId: "186") {
         date
@@ -48,5 +52,3 @@ export const GET_USER = gql`
 	  }
 	}
   `;
-
-
