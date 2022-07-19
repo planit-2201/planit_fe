@@ -26,6 +26,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [allRecords, setAllRecords] = useState([]);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [isDailyRecordSubmitted, setDailyRecordSubmitted] = useState(false);
 
   return (
     <main className="App">
@@ -39,6 +40,8 @@ function App() {
       <FindUserRecords
         allRecords={allRecords}
         setAllRecords={setAllRecords}
+        isDailyRecordSubmitted={isDailyRecordSubmitted}
+        setDailyRecordSubmitted={setDailyRecordSubmitted}
       />
       <section className='nav-bar'>
         <Nav
@@ -82,6 +85,8 @@ function App() {
                 allRecords={allRecords}
                 isTimerRunning={isTimerRunning}
                 setIsTimerRunning={setIsTimerRunning}
+                isDailyRecordSubmitted={isDailyRecordSubmitted}
+                setDailyRecordSubmitted={setDailyRecordSubmitted}
               />
             </section>
           </div>
