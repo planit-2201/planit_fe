@@ -60,8 +60,21 @@ describe ('Dashboard', () => {
     cy.get('.bag-item-number').should('have.text', '0')
   })
 
-  it('should be able to click and navigate to menu pages', () => {
+  it('should be able to click menu button and view options', () => {
     cy.get('#basic-button').click()
     cy.get('#log-in-msg').contains('Kevin')
+    cy.get('#shower-button').contains('Water Usage')
+    cy.get('#bottle-button').contains('Bottle Usage')
+    cy.get('#straw-button').contains('Straw Usage')
+    cy.get('#bag-button').contains('Bag Usage')
   })
+
+  it('Should be able to click on Water useage button to view its content', () => {
+    cy.get('#basic-button').click()
+    cy.get('#shower-button').click()
+  })
+
+  // create tests for each page to test its content as well as the URL is correct
+
+  // test timer if we have time
 })
