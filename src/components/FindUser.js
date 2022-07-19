@@ -2,18 +2,20 @@ import { useQuery, gql } from '@apollo/client';
 import { useEffect } from 'react';
 import { GET_USER } from './Queries'
 
-function FindUser({ setWeeklyAverageShowerTime, setThirtyDayAverageShowerTime, setUsername}) {
+function FindUser({ setWeeklyAverageShowerTime, setThirtyDayAverageShowerTime, setUsername, setThirtyDayAvgGallons, setThirtyDayAvgStraws, setThirtyDayAvgBags, setThirtyDayAvgBottles }) {
     const { loading, error, data } = useQuery(GET_USER);
 
     useEffect(() => {
         if (data) {
-            console.log(data.getUser.weeklyAverageShowerTime)
             setWeeklyAverageShowerTime(data.getUser.weeklyAverageShowerTime)
             setThirtyDayAverageShowerTime(data.getUser.thirtydayAverageShowerTime)
             setUsername(data.getUser.username)
+            setThirtyDayAvgGallons(data.getUser.thirtydayAverageWaterUsage)
+            setThirtyDayAvgStraws(data.getUser.thirtydayUserAverageStrawCount)
+            setThirtyDayAvgBags(data.getUser.thirtydayAverageBagCount)
+            setThirtyDayAvgBottles(data.getUser.thirtydayAverageBottleCount)
         }
     }, [data])
 }
 
 export default FindUser
-
