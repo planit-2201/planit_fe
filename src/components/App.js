@@ -27,15 +27,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [allRecords, setAllRecords] = useState([]);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-<<<<<<< HEAD
   const [thirtyDayAvgGallons, setThirtyDayAvgGallons] = useState(0);
   const [thirtyDayAvgStraws, setThirtyDayAvgStraws] = useState(0);
   const [thirtyDayAvgBags, setThirtyDayAvgBags] = useState(0);
   const [thirtyDayAvgBottles, setThirtyDayAvgBottles] = useState(0);
-
-=======
   const [isDailyRecordSubmitted, setDailyRecordSubmitted] = useState(false);
->>>>>>> main
 
   return (
     <main className="App">
