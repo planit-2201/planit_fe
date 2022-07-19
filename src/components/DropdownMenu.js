@@ -61,11 +61,11 @@ export default function DropdownMenu({ username, currentPage, setCurrentPage }) 
         }}
       >
         <MenuItem className='menu-item' id='log-in-msg'>{username} is logged in</MenuItem>
-        {currentPage !== 'home' && <Link to={`/`} onClick={homePageHandler}><MenuItem className='menu-item' onClick={handleClose}>Home</MenuItem></Link>}
-        {currentPage !== 'shower' && <Link to={`/shower`} onClick={showerPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Water Usage</MenuItem></Link>}
-        {currentPage !== 'bottles' && <Link to={`/bottles`} onClick={bottlePageHandler}><MenuItem className='menu-item' onClick={handleClose}>Bottle Usage</MenuItem></Link>}
-        {currentPage !== 'straws' && <Link to={`/straws`} onClick={strawPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Straw Usage</MenuItem></Link>}
-        {currentPage !== 'bags' && <Link to={`/bags`} onClick={bagPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Bag Usage</MenuItem></Link>}
+        {currentPage !== 'home' && <Link to={`/`} onClick={homePageHandler}><MenuItem id='home-button' className='menu-item' onClick={handleClose}>Home</MenuItem></Link>}
+        {currentPage !== 'shower' && <Link to={`/shower`} onClick={showerPageHandler}><MenuItem id='shower-button' className='menu-item' onClick={handleClose}>Water Usage</MenuItem></Link>}
+        {currentPage !== 'bottles' && <Link to={`/bottles`} onClick={bottlePageHandler}><MenuItem id='bottle-button' className='menu-item' onClick={handleClose}>Bottle Usage</MenuItem></Link>}
+        {currentPage !== 'straws' && <Link to={`/straws`} onClick={strawPageHandler}><MenuItem id='straw-button' className='menu-item' onClick={handleClose}>Straw Usage</MenuItem></Link>}
+        {currentPage !== 'bags' && <Link to={`/bags`} onClick={bagPageHandler}><MenuItem id='bag-button' className='menu-item' onClick={handleClose}>Bag Usage</MenuItem></Link>}
       </Menu>
     </div>
   );

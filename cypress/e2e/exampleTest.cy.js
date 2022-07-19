@@ -1,8 +1,7 @@
 import { aliasQuery, aliasMutation, hasOperationName } from '../utils/graphql-test-utils'
 
 describe ('Dashboard', () => {
-
-  it('Should display homepage information', () => {
+  beforeEach(() => {
     cy.intercept('POST', 'https://immense-hollows-78338.herokuapp.com/graphql', (req) => {
       const { body } = req
       aliasQuery(req, 'getUser')
@@ -13,6 +12,7 @@ describe ('Dashboard', () => {
           res.body.data.getUser.weeklyAverageShowerTime = 1000
           res.body.data.getUser.weeklyAverageWaterUsage = 1000
           res.body.data.getUser.thirtydayAverageShowerTime = 2000
+          res.body.data.getUser.username = 'Kevin'
           console.log("Running")
         })
       } else {
@@ -20,6 +20,9 @@ describe ('Dashboard', () => {
       }
     })
     cy.visit('http://localhost:3000/')
+  })
+
+  it('Should display homepage information', () => {
     cy.contains('Did You Know...')
     cy.contains('The average American uses 5,336 gallons of water on showers per year?')
     cy.contains('If the average shower was 5 minutes long, that number would drop to 3650!')
@@ -39,21 +42,26 @@ describe ('Dashboard', () => {
     cy.contains('Plastic Straws')
     cy.contains('Plastic Shopping Bags')
   })
-    it('Should be able to update item counters', () => {
-      cy.visit('http://localhost:3000/')
-      cy.get('.item-increment-btn').first().click().click()
-      cy.get('.bottle-item-number').should('have.text', '2')
-      cy.get('.item-decrement-btn').first().click().click().click()
-      cy.get('.bottle-item-number').should('have.text', '0')
 
-      cy.get('.item-increment-btn').eq(1).click().click()
-      cy.get('.straw-item-number').should('have.text', '2')
-      cy.get('.item-decrement-btn').eq(1).click().click().click()
-      cy.get('.straw-item-number').should('have.text', '0')
+  it('Should be able to update item counters', () => {
+    cy.get('.item-increment-btn').first().click().click()
+    cy.get('.bottle-item-number').should('have.text', '2')
+    cy.get('.item-decrement-btn').first().click().click().click()
+    cy.get('.bottle-item-number').should('have.text', '0')
 
-      cy.get('.item-increment-btn').last().click().click()
-      cy.get('.bag-item-number').should('have.text', '2')
-      cy.get('.item-decrement-btn').last().click().click().click()
-      cy.get('.bag-item-number').should('have.text', '0')
-    })
+    cy.get('.item-increment-btn').eq(1).click().click()
+    cy.get('.straw-item-number').should('have.text', '2')
+    cy.get('.item-decrement-btn').eq(1).click().click().click()
+    cy.get('.straw-item-number').should('have.text', '0')
+
+    cy.get('.item-increment-btn').last().click().click()
+    cy.get('.bag-item-number').should('have.text', '2')
+    cy.get('.item-decrement-btn').last().click().click().click()
+    cy.get('.bag-item-number').should('have.text', '0')
+  })
+
+  it('should be able to click and navigate to menu pages', () => {
+    cy.get('#basic-button').click()
+    cy.get('#log-in-msg').contains('Kevin')
+  })
 })
