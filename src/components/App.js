@@ -89,22 +89,38 @@ function App() {
         }} />
         <Route exact path="/shower" render={() => {
           return <div>
-            <ShowerMinInfo />
+            <ShowerMinInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         }} />
         <Route exact path="/bottles" render={() => {
           return <div>
-            <BottleInfo />
+            <BottleInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         }} />
         <Route exact path="/straws" render={() => {
           return <div>
-            <StrawInfo />
+            <StrawInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         }} />
         <Route exact path="/bags" render={() => {
           return <div>
-            <BagInfo />
+            <BagInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         }} />
         <Route path="*" component={Error} />

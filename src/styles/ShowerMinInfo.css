@@ -5,6 +5,8 @@
   background-color: white;
   margin: 5% auto;
   padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
   width: 70vw;
   height: 70vh;
   border-radius: 6px;
@@ -16,6 +18,7 @@
     0 16px 16px hsl(0deg 0% 0% / 0.075)
   ;
   font-size: 1.2em;
+  overflow-y: scroll;
 }
 
 .data-title {
