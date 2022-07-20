@@ -9,12 +9,9 @@ const ShowerInfo = ({
   setTodaysSeconds,
   setTodaysMinutes,
   setTotalSeconds,
-  totalSeconds,
   setTotalMinutes,
-  totalMinutes,
   weeklyAverageShowerTime,
   thirtyDayAverageShowerTime,
-  isTimerRunning,
   setIsTimerRunning,
   allRecords }) => {
 
@@ -56,7 +53,6 @@ const ShowerInfo = ({
 
   const setTodayShowerTime = () => {
     let findDate = allRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD'))
-    console.log(findDate)
     if (findDate) {
       return <h3 className='shower-data-num'>{Math.floor(findDate.showerTime/60)}:{String(findDate.showerTime % 60).padStart(2, '0')}</h3>
     } else {
@@ -72,10 +68,11 @@ const ShowerInfo = ({
           <span>{minutes}</span>:<span>{String(seconds).padStart(2, '0')}</span>
         </div>
         <div className='timer-btn-container'>
-          <button className='timer-btn' onClick={startShower}>Start</button>
-          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
-          <button className='timer-btn' onClick={resetShower}>Reset</button>
+          <button className='timer-btn' id='start-btn' onClick={startShower}>Start</button>
+          <button className='timer-btn' id='pause-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
+          <button className='timer-btn' id='reset-btn' onClick={resetShower}>Reset</button>
         </div>
+        <p>Please note: your daily record will not be recorded unless you submit below</p>
       </div>
       <div className='shower-data'>
         <div className='shower-data-text-box'>
@@ -92,14 +89,5 @@ const ShowerInfo = ({
     </section>
   )
 }
-
-// If a user clicks start while the timer is already running, don't reset it.
-  // Fixed - used the built in isRunning
-// As the timer changes, reflect the new state in the UI
-  // Fixed - had to JavaScript interpolate a different piece of state to reflect this
-// When the timer is reset, then the user clicks 'start' the time resets to the last time. Fix this
-  // Fixed - had to add a helper function that resets the total minutes and seconds in state back to 0,
-  // Put the reset function inside of this helper function
-  // Had to change the order in which the two functions were invoked when the reset button is clicked
 
 export default ShowerInfo;

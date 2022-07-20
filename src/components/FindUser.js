@@ -2,7 +2,7 @@ import { useQuery, gql } from '@apollo/client';
 import { useEffect } from 'react';
 import { GET_USER } from './Queries'
 
-function FindUser({ setWeeklyAverageShowerTime, setThirtyDayAverageShowerTime, setUsername, setThirtyDayAvgGallons, setThirtyDayAvgStraws, setThirtyDayAvgBags, setThirtyDayAvgBottles }) {
+function FindUser({ setWeeklyAverageShowerTime, setThirtyDayAverageShowerTime, setUsername, setThirtyDayAvgGallons, setThirtyDayAvgStraws, setThirtyDayAvgBags, setThirtyDayAvgBottles, setIsError }) {
     const { loading, error, data } = useQuery(GET_USER);
 
     useEffect(() => {
@@ -16,6 +16,9 @@ function FindUser({ setWeeklyAverageShowerTime, setThirtyDayAverageShowerTime, s
             setThirtyDayAvgBottles(data.getUser.thirtydayAverageBottleCount)
         }
     }, [data])
+    if (error) {
+        setIsError(true)
+    }
 }
 
 export default FindUser

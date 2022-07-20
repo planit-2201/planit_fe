@@ -29,9 +29,6 @@ client
       }
     `,
   })
-  .then((result) => console.log(result));
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

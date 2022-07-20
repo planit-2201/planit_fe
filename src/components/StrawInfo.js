@@ -1,7 +1,6 @@
-import '../styles/StrawInfo.css'
 import { useEffect } from 'react';
 
-const StrawInfo = ({ username, currentPage, setCurrentPage, thirtyDayAvgStraws }) => {
+const StrawInfo = ({ username, setCurrentPage, thirtyDayAvgStraws }) => {
 
   useEffect(() => {
     setCurrentPage('straws')

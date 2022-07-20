@@ -1,9 +1,9 @@
 import '../styles/ItemCounters.css';
-import { gql, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import {SUBMIT_RECORD} from './Queries.js';
 import dayjs from 'dayjs';
 
-const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds, allRecords, setAllRecords, isTimerRunning, setIsTimerRunning, isDailyRecordSubmitted, setDailyRecordSubmitted }) => {
+const ItemCounters = ({ bottleCount, setBottleCount, bagCount, setBagCount, strawCount, setStrawCount, totalMinutes, totalSeconds, allRecords, isTimerRunning, isDailyRecordSubmitted, setDailyRecordSubmitted }) => {
 
 let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
 
@@ -29,9 +29,6 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
         showerTime: showerTime
       }
     })
-    if (error) {
-      console.log(error);
-    }
     setDailyRecordSubmitted(true)
   }
 
