@@ -72,6 +72,7 @@ describe ('Dashboard', () => {
   it('Should be able to click on Water useage button to view its content', () => {
     cy.get('#basic-button').click()
     cy.get('#shower-button').click()
+    cy.url().should('eq', 'http://localhost:3000/shower')
     cy.get('.description-container').contains('Hi Kevin')
     cy.get('.source-link').should('exist')
   })
@@ -79,6 +80,7 @@ describe ('Dashboard', () => {
   it('Should be able to click on bottle usage button to view its content', () => {
     cy.get('#basic-button').click()
     cy.get('#bottle-button').click()
+    cy.url().should('eq', 'http://localhost:3000/bottles')
     cy.get('.description-container').contains('Hi Kevin, did you know the following facts about plastic water bottle usage?')
     cy.get('.source-link').should('exist')
   })
@@ -86,13 +88,15 @@ describe ('Dashboard', () => {
   it('Should be able to click on straw usage button to view its content', () => {
     cy.get('#basic-button').click()
     cy.get('#straw-button').click()
+    cy.url().should('eq', 'http://localhost:3000/straws')
     cy.get('.description-container').contains('Hi Kevin, did you know the following facts about straw usage?')
     cy.get('.source-link').should('exist')
   })
 
-  it.only('Should be able to click on bag usage button to view its content', () => {
+  it('Should be able to click on bag usage button to view its content', () => {
     cy.get('#basic-button').click()
     cy.get('#bag-button').click()
+    cy.url().should('eq', 'http://localhost:3000/bags')
     cy.get('.description-container').contains('Hi Kevin, did you know the following facts about plastic bag usage?')
     cy.get('.source-link').should('exist')
   })
