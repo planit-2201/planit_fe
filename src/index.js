@@ -14,18 +14,24 @@ client
   .query({
     query: gql`
       query getUser {
-        getUser(id: "186") {
+        getUser(id: "188") {
           id
           username
           flowrate
           weeklyAverageShowerTime
           weeklyAverageWaterUsage
           thirtydayAverageShowerTime
+          thirtydayAverageWaterUsage
+          thirtydayAverageBottleCount
+          thirtydayAverageBagCount
+          thirtydayUserAverageStrawCount
         }
       }
     `,
   })
   .then((result) => console.log(result));
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

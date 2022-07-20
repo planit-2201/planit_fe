@@ -1,6 +1,7 @@
 import '../styles/ShowerInfo.css'
 import { useStopwatch } from 'react-timer-hook';
 import { useEffect } from 'react';
+import dayjs from 'dayjs';
 
 const ShowerInfo = ({
   todaysSeconds,
@@ -12,7 +13,10 @@ const ShowerInfo = ({
   setTotalMinutes,
   totalMinutes,
   weeklyAverageShowerTime,
-  thirtyDayAverageShowerTime }) => {
+  thirtyDayAverageShowerTime,
+  isTimerRunning,
+  setIsTimerRunning,
+  allRecords }) => {
 
   let {
     seconds,
@@ -39,6 +43,7 @@ const ShowerInfo = ({
   const startShower = () => {
     if (!isRunning) {
       start()
+      setIsTimerRunning(true)
     }
   }
 
@@ -46,6 +51,17 @@ const ShowerInfo = ({
     reset(0, false);
     setTotalSeconds(0)
     setTotalMinutes(0)
+    setIsTimerRunning(false)
+  }
+
+  const setTodayShowerTime = () => {
+    let findDate = allRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD'))
+    console.log(findDate)
+    if (findDate) {
+      return <h3 className='shower-data-num'>{Math.floor(findDate.showerTime/60)}:{String(findDate.showerTime % 60).padStart(2, '0')}</h3>
+    } else {
+      return <h3 className='shower-data-num'>{todaysMinutes}:{String(todaysSeconds).padStart(2, '0')}</h3>
+    }
   }
 
   return (
@@ -57,7 +73,7 @@ const ShowerInfo = ({
         </div>
         <div className='timer-btn-container'>
           <button className='timer-btn' onClick={startShower}>Start</button>
-          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes)}}>Pause</button>
+          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
           <button className='timer-btn' onClick={resetShower}>Reset</button>
         </div>
       </div>
@@ -68,7 +84,7 @@ const ShowerInfo = ({
           <h3 className='shower-data-text'>30 Day Average</h3>
         </div>
         <div className='shower-data-num-box'>
-          <h3 className='shower-data-num'>{todaysMinutes}:{String(todaysSeconds).padStart(2, '0')}</h3>
+          {setTodayShowerTime()}
           <h3 className='shower-data-num'>{Math.floor(weeklyAverageShowerTime/60)}:{String(weeklyAverageShowerTime % 60).padStart(2, '0')}</h3>
           <h3 className='shower-data-num'>{Math.floor(thirtyDayAverageShowerTime/60)}:{String(thirtyDayAverageShowerTime % 60).padStart(2, '0')}</h3>
         </div>

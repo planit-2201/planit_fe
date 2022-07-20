@@ -4,13 +4,13 @@ import MainInfo from './MainInfo';
 import ShowerInfo from './ShowerInfo';
 import ItemCounters from './ItemCounters';
 import ShowerMinInfo from './ShowerMinInfo';
-import RecyclingInfo from './RecyclingInfo';
-import CompostingInfo from './CompostingInfo';
+import BottleInfo from './BottleInfo';
+import StrawInfo from './StrawInfo';
+import BagInfo from './BagInfo';
 import { useState } from 'react';
 import FindUser from './FindUser';
+import FindUserRecords from './FindUserRecords'
 import { Route, Switch } from 'react-router-dom';
-
-
 
 function App() {
 
@@ -25,6 +25,13 @@ function App() {
   const [thirtyDayAverageShowerTime, setThirtyDayAverageShowerTime] = useState(0);
   const [username, setUsername] = useState('');
   const [currentPage, setCurrentPage] = useState('home');
+  const [allRecords, setAllRecords] = useState([]);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [thirtyDayAvgGallons, setThirtyDayAvgGallons] = useState(0);
+  const [thirtyDayAvgStraws, setThirtyDayAvgStraws] = useState(0);
+  const [thirtyDayAvgBags, setThirtyDayAvgBags] = useState(0);
+  const [thirtyDayAvgBottles, setThirtyDayAvgBottles] = useState(0);
+  const [isDailyRecordSubmitted, setDailyRecordSubmitted] = useState(false);
 
   return (
     <main className="App">
@@ -34,7 +41,17 @@ function App() {
         setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
         thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
         setUsername={setUsername}
+        setThirtyDayAvgGallons={setThirtyDayAvgGallons}
+        setThirtyDayAvgStraws={setThirtyDayAvgStraws}
+        setThirtyDayAvgBags={setThirtyDayAvgBags}
+        setThirtyDayAvgBottles={setThirtyDayAvgBottles}
         />
+      <FindUserRecords
+        allRecords={allRecords}
+        setAllRecords={setAllRecords}
+        isDailyRecordSubmitted={isDailyRecordSubmitted}
+        setDailyRecordSubmitted={setDailyRecordSubmitted}
+      />
       <section className='nav-bar'>
         <Nav
         username={username}
@@ -59,6 +76,9 @@ function App() {
                 totalMinutes={totalMinutes}
                 setThirtyDayAverageShowerTime={setThirtyDayAverageShowerTime}
                 thirtyDayAverageShowerTime={thirtyDayAverageShowerTime}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
+                allRecords={allRecords}
               />
             </section>
             <section className='item-counters'>
@@ -71,25 +91,56 @@ function App() {
                 setStrawCount={setStrawCount}
                 totalSeconds={totalSeconds}
                 totalMinutes={totalMinutes}
+                allRecords={allRecords}
+                isTimerRunning={isTimerRunning}
+                setIsTimerRunning={setIsTimerRunning}
+                isDailyRecordSubmitted={isDailyRecordSubmitted}
+                setDailyRecordSubmitted={setDailyRecordSubmitted}
               />
             </section>
           </div>
         }} />
         <Route exact path="/shower" render={() => {
           return <div>
-            <ShowerMinInfo />
+            <ShowerMinInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              thirtyDayAvgGallons={thirtyDayAvgGallons}
+            />
           </div>
         }} />
-        <Route exact path="/recycling" render={() => {
+        <Route exact path="/bottles" render={() => {
           return <div>
-            <RecyclingInfo />
+            <BottleInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              thirtyDayAvgBottles={thirtyDayAvgBottles}
+            />
           </div>
         }} />
-        <Route exact path="/composting" render={() => {
+        <Route exact path="/straws" render={() => {
           return <div>
-            <CompostingInfo />
+            <StrawInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              thirtyDayAvgStraws={thirtyDayAvgStraws}
+            />
           </div>
         }} />
+        <Route exact path="/bags" render={() => {
+          return <div>
+            <BagInfo
+              username={username}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              thirtyDayAvgBags={thirtyDayAvgBags}
+            />
+          </div>
+        }} />
+        <Route path="*" component={Error} />
       </Switch>
     </main>
   );
