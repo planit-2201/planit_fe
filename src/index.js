@@ -21,11 +21,17 @@ client
           weeklyAverageShowerTime
           weeklyAverageWaterUsage
           thirtydayAverageShowerTime
+          thirtydayAverageWaterUsage
+          thirtydayAverageBottleCount
+          thirtydayAverageBagCount
+          thirtydayUserAverageStrawCount
         }
       }
     `,
   })
   .then((result) => console.log(result));
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

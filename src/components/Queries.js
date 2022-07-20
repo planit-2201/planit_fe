@@ -9,6 +9,10 @@ export const GET_USER = gql`
 		weeklyAverageShowerTime
 		weeklyAverageWaterUsage
 		thirtydayAverageShowerTime
+		thirtydayAverageWaterUsage
+		thirtydayAverageBottleCount
+		thirtydayAverageBagCount
+		thirtydayUserAverageStrawCount
 	  }
 	}
   `;

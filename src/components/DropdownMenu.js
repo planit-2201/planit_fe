@@ -20,12 +20,16 @@ export default function DropdownMenu({ username, currentPage, setCurrentPage }) 
     setCurrentPage('shower')
   }
 
-  const recyclingPageHandler = () => {
-    setCurrentPage('recycling')
+  const bottlePageHandler = () => {
+    setCurrentPage('bottles')
   }
 
-  const compostingPageHandler = () => {
-    setCurrentPage('composting')
+  const strawPageHandler = () => {
+    setCurrentPage('straws')
+  }
+
+  const bagPageHandler = () => {
+    setCurrentPage('bags')
   }
 
   const homePageHandler = () => {
@@ -58,9 +62,10 @@ export default function DropdownMenu({ username, currentPage, setCurrentPage }) 
       >
         <MenuItem className='menu-item' id='log-in-msg'>{username} is logged in</MenuItem>
         {currentPage !== 'home' && <Link to={`/`} onClick={homePageHandler}><MenuItem className='menu-item' onClick={handleClose}>Home</MenuItem></Link>}
-        {currentPage !== 'shower' && <Link to={`/shower`} onClick={showerPageHandler}><MenuItem className='menu-item' onClick={handleClose}>5 Min Shower</MenuItem></Link>}
-        {currentPage !== 'recycling' && <Link to={`/recycling`} onClick={recyclingPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Recycling</MenuItem></Link>}
-        {currentPage !== 'composting' && <Link to={`/composting`} onClick={compostingPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Composting</MenuItem></Link>}
+        {currentPage !== 'shower' && <Link to={`/shower`} onClick={showerPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Water Usage</MenuItem></Link>}
+        {currentPage !== 'bottles' && <Link to={`/bottles`} onClick={bottlePageHandler}><MenuItem className='menu-item' onClick={handleClose}>Bottle Usage</MenuItem></Link>}
+        {currentPage !== 'straws' && <Link to={`/straws`} onClick={strawPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Straw Usage</MenuItem></Link>}
+        {currentPage !== 'bags' && <Link to={`/bags`} onClick={bagPageHandler}><MenuItem className='menu-item' onClick={handleClose}>Bag Usage</MenuItem></Link>}
       </Menu>
     </div>
   );

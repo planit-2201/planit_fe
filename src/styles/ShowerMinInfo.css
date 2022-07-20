@@ -1,11 +1,14 @@
 .description-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   background-color: white;
   margin: 5% auto;
   padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
   width: 70vw;
-  height: 30vh;
+  height: 70vh;
   border-radius: 6px;
   box-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075),
@@ -14,4 +17,16 @@
     0 8px 8px hsl(0deg 0% 0% / 0.075),
     0 16px 16px hsl(0deg 0% 0% / 0.075)
   ;
+  font-size: 1.2em;
+  overflow-y: scroll;
+}
+
+.data-title {
+  font-size: 2em;
+  padding-bottom: 1%;
+  padding-top: 3%;
+}
+
+.data-paragraph {
+  padding-left: 2%;
 }
