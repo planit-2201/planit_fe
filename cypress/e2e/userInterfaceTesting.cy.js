@@ -13,10 +13,7 @@ describe ('Dashboard', () => {
           res.body.data.getUser.weeklyAverageWaterUsage = 1000
           res.body.data.getUser.thirtydayAverageShowerTime = 2000
           res.body.data.getUser.username = 'Kevin'
-          console.log("Running")
         })
-      } else {
-        console.log("Not Running")
       }
     })
     cy.visit('http://localhost:3000/')
@@ -113,5 +110,5 @@ describe ('Dashboard', () => {
     cy.get('#reset-btn').click()
     cy.get('.timer-nums').contains('0:00')
   })
-
+  
 })

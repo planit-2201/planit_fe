@@ -9,7 +9,6 @@ function FindUserRecords({ allRecords, setAllRecords, isDailyRecordSubmitted, se
 
   useEffect(() => {
     if (data) {
-      console.log(data)
       setAllRecords(data.getUserDailyRecords)
       setDailyRecordSubmitted(data.getUserDailyRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD')) !== undefined)
     }

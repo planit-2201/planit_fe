@@ -29,9 +29,6 @@ let showerTime = parseInt(totalMinutes) * 60 + parseInt(totalSeconds)
         showerTime: showerTime
       }
     })
-    if (error) {
-      console.log(error);
-    }
     setDailyRecordSubmitted(true)
   }
 
