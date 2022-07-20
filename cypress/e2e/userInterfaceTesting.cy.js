@@ -101,7 +101,17 @@ describe ('Dashboard', () => {
     cy.get('.source-link').should('exist')
   })
   
-  
+  it('Should display a 404 message if a user tries to visit a page that does not exist', () => {
+    cy.visit('http://localhost:3000/potato')
+    cy.get('.fof-box').contains(`Oh no - this page doesn't exist! Navigate to an existing page using the menu above.`)
+  })
 
-  // test timer if we have time
+  it('Should be able to work the timer', () => {
+    cy.get('#start-btn').click().wait(5000)
+    cy.get('#pause-btn').click()
+    cy.get('.timer-nums').contains('0:05')
+    cy.get('#reset-btn').click()
+    cy.get('.timer-nums').contains('0:00')
+  })
+
 })

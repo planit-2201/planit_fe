@@ -11,6 +11,7 @@ import { useState } from 'react';
 import FindUser from './FindUser';
 import FindUserRecords from './FindUserRecords'
 import { Route, Switch } from 'react-router-dom';
+import Error from './Error';
 
 function App() {
 

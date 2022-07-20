@@ -71,9 +71,9 @@ const ShowerInfo = ({
           <span>{minutes}</span>:<span>{String(seconds).padStart(2, '0')}</span>
         </div>
         <div className='timer-btn-container'>
-          <button className='timer-btn' onClick={startShower}>Start</button>
-          <button className='timer-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
-          <button className='timer-btn' onClick={resetShower}>Reset</button>
+          <button className='timer-btn' id='start-btn' onClick={startShower}>Start</button>
+          <button className='timer-btn' id='pause-btn' onClick={() => {pause(); setTotalShowerTime(todaysSeconds, todaysMinutes); setIsTimerRunning(false)}}>Pause</button>
+          <button className='timer-btn' id='reset-btn' onClick={resetShower}>Reset</button>
         </div>
       </div>
       <div className='shower-data'>
