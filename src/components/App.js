@@ -32,8 +32,11 @@ function App() {
   const [thirtyDayAvgBags, setThirtyDayAvgBags] = useState(0);
   const [thirtyDayAvgBottles, setThirtyDayAvgBottles] = useState(0);
   const [isDailyRecordSubmitted, setDailyRecordSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   return (
+    <>
+    {!isError && 
     <main className="App">
       <FindUser
         weeklyAverageShowerTime={weeklyAverageShowerTime}
@@ -45,6 +48,8 @@ function App() {
         setThirtyDayAvgStraws={setThirtyDayAvgStraws}
         setThirtyDayAvgBags={setThirtyDayAvgBags}
         setThirtyDayAvgBottles={setThirtyDayAvgBottles}
+        isError={isError}
+        setIsError={setIsError}
         />
       <FindUserRecords
         allRecords={allRecords}
@@ -143,6 +148,9 @@ function App() {
         <Route path="*" component={Error} />
       </Switch>
     </main>
+    }
+    {isError && <p>Hello! There was an issue loading your data, please try refreshing this page</p>}
+    </>
   );
 }
 

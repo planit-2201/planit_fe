@@ -56,7 +56,6 @@ const ShowerInfo = ({
 
   const setTodayShowerTime = () => {
     let findDate = allRecords.find(record => record.date === dayjs(Date()).format('YYYY-MM-DD'))
-    console.log(findDate)
     if (findDate) {
       return <h3 className='shower-data-num'>{Math.floor(findDate.showerTime/60)}:{String(findDate.showerTime % 60).padStart(2, '0')}</h3>
     } else {
