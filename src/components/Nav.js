@@ -1,7 +1,6 @@
 import '../styles/Nav.css'
 import DropdownMenu from './DropdownMenu'
 
-
 const Nav = ({ username, currentPage, setCurrentPage }) => {
   return (
     <nav className='nav'>

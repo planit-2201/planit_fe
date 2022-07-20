@@ -4,7 +4,7 @@ import { GET_USER_RECORDS } from './Queries.js';
 import dayjs from 'dayjs';
 
 
-function FindUserRecords({ allRecords, setAllRecords, isDailyRecordSubmitted, setDailyRecordSubmitted }) {
+function FindUserRecords({ setAllRecords, setDailyRecordSubmitted }) {
   const { loading, error, data } = useQuery(GET_USER_RECORDS)
 
   useEffect(() => {

@@ -9,12 +9,9 @@ const ShowerInfo = ({
   setTodaysSeconds,
   setTodaysMinutes,
   setTotalSeconds,
-  totalSeconds,
   setTotalMinutes,
-  totalMinutes,
   weeklyAverageShowerTime,
   thirtyDayAverageShowerTime,
-  isTimerRunning,
   setIsTimerRunning,
   allRecords }) => {
 

@@ -1,7 +1,7 @@
 import '../styles/BottleInfo.css'
 import { useEffect } from 'react';
 
-const BottleInfo = ({ username, currentPage, setCurrentPage, thirtyDayAvgBottles }) => {
+const BottleInfo = ({ username, setCurrentPage, thirtyDayAvgBottles }) => {
 
   useEffect(() => {
     setCurrentPage('bottles')

@@ -1,7 +1,7 @@
 import '../styles/ShowerMinInfo.css';
 import { useEffect } from 'react';
 
-const ShowerMinInfo = ({ username, currentPage, setCurrentPage, thirtyDayAvgGallons }) => {
+const ShowerMinInfo = ({ username, setCurrentPage, thirtyDayAvgGallons }) => {
 
   useEffect(() => {
     setCurrentPage('shower')

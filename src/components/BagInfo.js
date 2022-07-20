@@ -1,7 +1,6 @@
-import '../styles/BagInfo.css'
 import { useEffect } from 'react';
 
-const BagInfo = ({ username, currentPage, setCurrentPage, thirtyDayAvgBags }) => {
+const BagInfo = ({ username, setCurrentPage, thirtyDayAvgBags }) => {
 
   useEffect(() => {
     setCurrentPage('bottles')
