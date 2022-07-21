@@ -19,6 +19,10 @@ PlanIt is a web application that encourages users to conserve water by taking a 
 
 **Server:** Apollo, GraphQL
 
+## Wireframe
+
+![Wireframe Screenshot](./public/assets/wireframe.png)
+
 
 ## Screenshots
 
