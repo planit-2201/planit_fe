@@ -21,8 +21,7 @@ PlanIt is a web application that encourages users to conserve water by taking a 
 
 ## Wireframe
 
-<img width="1440" alt="Screen Shot 2022-07-09 at 10 31 42 PM" src="https://user-images.githubusercontent.com/82775910/180261495-6ddf588f-5b43-4c3d-ae04-aba48a5bb606.png">
-
+![Screen Shot 2022-07-07 at 5 46 59 PM](https://user-images.githubusercontent.com/82775910/180261788-21e2aa97-20e3-4a5c-b2c9-eb74b6834e22.png)
 
 ## Screenshots
 
