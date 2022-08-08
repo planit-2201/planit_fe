@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const GET_USER = gql`
 	query getUser {
-	  getUser(id: "188") {
+	  getUser(id: "449") {
 		id
 		username
 		flowrate
@@ -19,7 +19,7 @@ export const GET_USER = gql`
 
   export const GET_USER_RECORDS = gql`
     query getUserRecords {
-      getUserDailyRecords(userId: "188") {
+      getUserDailyRecords(userId: "449") {
         date
         bagCount
         bottleCount
